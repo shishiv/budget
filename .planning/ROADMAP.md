@@ -14,7 +14,7 @@ None
 - Integer phases (1, 2, 3): Planned milestone work
 - Decimal phases (2.1, 2.2): Urgent insertions (marked with INSERTED)
 
-- [ ] **Phase 1: Foundation** - Next.js + Supabase setup, auth, database schema, UI shell
+- [x] **Phase 1: Foundation** - Next.js + Supabase setup, auth, database schema, UI shell
 - [ ] **Phase 2: Accounts & Transactions** - Account management, CSV import, manual entry
 - [ ] **Phase 3: Categorization** - Category system, auto-categorization, recurring detection
 - [ ] **Phase 4: Budgeting** - Envelope budgeting, allocation UI, budget tracking
@@ -32,7 +32,7 @@ None
 Plans:
 - [x] 01-01: Project setup (Next.js, Supabase, Tailwind, shadcn/ui)
 - [x] 01-02: Auth flow (login, signup, protected routes)
-- [ ] 01-03: Database schema (accounts, transactions, categories, budgets)
+- [x] 01-03: Database schema (accounts, transactions, categories, budgets)
 
 ### Phase 2: Accounts & Transactions
 **Goal**: Full transaction management with multi-account support and CSV import
@@ -89,7 +89,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Foundation | 2/3 | In progress | - |
+| 1. Foundation | 3/3 | Complete | 2025-12-17 |
 | 2. Accounts & Transactions | 0/4 | Not started | - |
 | 3. Categorization | 0/3 | Not started | - |
 | 4. Budgeting | 0/3 | Not started | - |
