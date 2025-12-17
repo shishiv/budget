@@ -1,6 +1,8 @@
 "use client";
 
-import { LayoutDashboard, Receipt, Wallet, CreditCard } from "lucide-react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { LayoutDashboard, Receipt, Wallet, CreditCard, Settings } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 interface SidebarProps {
@@ -11,26 +13,65 @@ const navigationItems = [
   {
     name: "Dashboard",
     icon: LayoutDashboard,
-    href: "#",
+    href: "/",
   },
   {
     name: "Transações",
     icon: Receipt,
-    href: "#",
+    href: "/transacoes",
   },
   {
     name: "Orçamentos",
     icon: Wallet,
-    href: "#",
+    href: "/orcamentos",
   },
   {
     name: "Contas",
     icon: CreditCard,
-    href: "#",
+    href: "/contas",
+  },
+];
+
+const bottomItems = [
+  {
+    name: "Configurações",
+    icon: Settings,
+    href: "/configuracoes",
   },
 ];
 
 export function Sidebar({ className }: SidebarProps) {
+  const pathname = usePathname();
+
+  const NavItem = ({ item }: { item: typeof navigationItems[0] }) => {
+    const Icon = item.icon;
+    const isActive = pathname === item.href;
+
+    return (
+      <Link
+        href={item.href}
+        className={cn(
+          "group relative flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium transition-all duration-200",
+          isActive
+            ? "bg-primary/10 text-primary"
+            : "text-muted-foreground hover:bg-accent hover:text-accent-foreground"
+        )}
+      >
+        {/* Active indicator */}
+        {isActive && (
+          <span className="absolute left-0 top-1/2 h-6 w-1 -translate-y-1/2 rounded-r-full bg-primary" />
+        )}
+
+        <Icon className={cn(
+          "h-5 w-5 transition-colors",
+          isActive ? "text-primary" : "text-muted-foreground group-hover:text-accent-foreground"
+        )} />
+
+        <span>{item.name}</span>
+      </Link>
+    );
+  };
+
   return (
     <aside
       className={cn(
@@ -38,21 +79,22 @@ export function Sidebar({ className }: SidebarProps) {
         className
       )}
     >
+      {/* Main navigation */}
       <nav className="flex-1 space-y-1 p-4">
-        {navigationItems.map((item) => {
-          const Icon = item.icon;
-          return (
-            <a
-              key={item.name}
-              href={item.href}
-              className="flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
-            >
-              <Icon className="h-5 w-5" />
-              <span>{item.name}</span>
-            </a>
-          );
-        })}
+        <div className="mb-2 px-3 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+          Menu
+        </div>
+        {navigationItems.map((item) => (
+          <NavItem key={item.name} item={item} />
+        ))}
       </nav>
+
+      {/* Bottom navigation */}
+      <div className="border-t border-border p-4">
+        {bottomItems.map((item) => (
+          <NavItem key={item.name} item={item} />
+        ))}
+      </div>
     </aside>
   );
 }
