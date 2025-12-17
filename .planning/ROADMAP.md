@@ -31,7 +31,7 @@ None
 
 Plans:
 - [x] 01-01: Project setup (Next.js, Supabase, Tailwind, shadcn/ui)
-- [ ] 01-02: Auth flow (login, signup, protected routes)
+- [x] 01-02: Auth flow (login, signup, protected routes)
 - [ ] 01-03: Database schema (accounts, transactions, categories, budgets)
 
 ### Phase 2: Accounts & Transactions
@@ -89,7 +89,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Foundation | 1/3 | In progress | - |
+| 1. Foundation | 2/3 | In progress | - |
 | 2. Accounts & Transactions | 0/4 | Not started | - |
 | 3. Categorization | 0/3 | Not started | - |
 | 4. Budgeting | 0/3 | Not started | - |

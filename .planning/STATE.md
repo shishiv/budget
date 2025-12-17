@@ -19,28 +19,28 @@
 ## Current Position
 
 Phase: 1 of 5 (Foundation)
-Plan: 1 of 3 in current phase
+Plan: 2 of 3 in current phase
 Status: In progress
-Last activity: 2025-12-17 - Completed 01-01-PLAN.md
+Last activity: 2025-12-17 - Completed 01-02-PLAN.md
 
-Progress: █░░░░░░░░░░░░░░░░ 6%
+Progress: ██░░░░░░░░░░░░░░░ 12%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 1
-- Average duration: 15 min
-- Total execution time: 0.25 hours
+- Total plans completed: 2
+- Average duration: 13.5 min
+- Total execution time: 0.45 hours
 
 **By Phase:**
 
 | Phase | Plans | Total | Avg/Plan |
 |-------|-------|-------|----------|
-| 1 | 1/3 | 15 min | 15 min |
+| 1 | 2/3 | 27 min | 13.5 min |
 
 **Recent Trend:**
-- Last 5 plans: 01-01 (15 min)
-- Trend: N/A (need more data)
+- Last 5 plans: 01-01 (15 min), 01-02 (12 min)
+- Trend: Improving (faster execution)
 
 *Updated after each plan completion*
 
@@ -57,6 +57,9 @@ Progress: █░░░░░░░░░░░░░░░░ 6%
 | 1 | Next.js 16 | Security fix for CVE-2025-66478 |
 | 1 | Tailwind v4 with PostCSS | Latest version, @import syntax |
 | 1 | Portuguese UI labels | App targets Brazilian users |
+| 1 | Server actions over API routes | Simpler pattern, Next.js 16 recommended |
+| 1 | useActionState for forms | React 19 pattern, handles pending/error states |
+| 1 | Route groups (authenticated) | Clear separation of protected vs public routes |
 
 ### Deferred Issues
 
@@ -76,5 +79,5 @@ Drift notes: None
 ## Session Continuity
 
 Last session: 2025-12-17
-Stopped at: Completed 01-01-PLAN.md
+Stopped at: Completed 01-02-PLAN.md
 Resume file: None
