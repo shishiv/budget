@@ -2,7 +2,7 @@
 
 ## Overview
 
-Build a personal finance app from the ground up. Start with foundation (Next.js + Supabase), then add core transaction management with CSV import. Layer in smart categorization and recurring detection. Build the envelope budgeting system. Finally, create the beautiful dashboards that make finances visible at a glance.
+Build a personal finance app from the ground up. Start with foundation (Next.js + Supabase), then add core transaction management with CSV import. Layer in smart categorization and recurring detection. Build the envelope budgeting system. Create beautiful dashboards that make finances visible at a glance. Connect to Brazilian open finance providers for automatic sync. Add WhatsApp bot for quick access and notifications.
 
 ## Domain Expertise
 
@@ -19,6 +19,8 @@ None
 - [ ] **Phase 3: Categorization** - Category system, auto-categorization, recurring detection
 - [ ] **Phase 4: Budgeting** - Envelope budgeting, allocation UI, budget tracking
 - [ ] **Phase 5: Dashboards** - Spending charts, net worth, cash flow reports
+- [ ] **Phase 6: Open Finance** - API integration with Brazilian open finance providers (Pluggy, Belvo)
+- [ ] **Phase 7: WhatsApp Bot** - Chatbot integration for quick access and notifications
 
 ## Phase Details
 
@@ -82,10 +84,35 @@ Plans:
 - [ ] 05-03: Net worth over time (line chart, account breakdown)
 - [ ] 05-04: Cash flow report (income vs expenses, trends)
 
+### Phase 6: Open Finance
+**Goal**: Connect to Brazilian open finance providers for automatic account sync
+**Depends on**: Phase 2
+**Research**: Likely (provider selection, API integration)
+**Research topics**: Pluggy vs Belvo vs direct bank APIs, OAuth flows, data normalization, webhook handling for real-time sync
+**Plans**: TBD
+
+Plans:
+- [ ] 06-01: Provider integration setup (Pluggy/Belvo SDK, authentication)
+- [ ] 06-02: Account connection flow (link bank accounts via provider)
+- [ ] 06-03: Transaction sync (automatic import, deduplication, real-time webhooks)
+
+### Phase 7: WhatsApp Bot
+**Goal**: WhatsApp chatbot for quick finance access and notifications
+**Depends on**: Phase 5
+**Research**: Likely (WhatsApp Business API)
+**Research topics**: WhatsApp Business API vs cloud API, message templates, webhook handling, conversation flows, notification best practices
+**Plans**: TBD
+
+Plans:
+- [ ] 07-01: WhatsApp API setup (business account, webhook configuration)
+- [ ] 07-02: Quick queries (balance check, recent transactions, spending summary)
+- [ ] 07-03: Notifications (budget alerts, large transactions, recurring reminders)
+- [ ] 07-04: Transaction entry via chat (natural language parsing)
+
 ## Progress
 
 **Execution Order:**
-Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
+Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6 → 7
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
@@ -94,3 +121,5 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
 | 3. Categorization | 0/3 | Not started | - |
 | 4. Budgeting | 0/3 | Not started | - |
 | 5. Dashboards | 0/4 | Not started | - |
+| 6. Open Finance | 0/3 | Not started | - |
+| 7. WhatsApp Bot | 0/4 | Not started | - |
