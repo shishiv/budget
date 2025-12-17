@@ -1,85 +1,51 @@
 # Phase 1 Plan 2: Auth Flow Summary
 
-**Supabase email/password auth with middleware token refresh, protected routes, login/signup pages, and user menu dropdown**
-
-## Performance
-
-- **Duration:** ~12 min
-- **Started:** 2025-12-17T15:30:00Z
-- **Completed:** 2025-12-17T15:42:00Z
-- **Tasks:** 4 (3 auto + 1 checkpoint)
-- **Files modified:** 13
+**Complete Supabase authentication with TrianguloTEC-branded UI for Budget app.**
 
 ## Accomplishments
 
-- Auth middleware with Supabase session token refresh
-- Login and signup pages with clean, centered card design
-- Server actions for signIn, signUp, signOut (using useActionState)
-- User menu dropdown showing email with logout option
-- Route groups organizing authenticated vs public routes
-- OAuth callback route ready for future providers
+- Implemented email/password authentication with Supabase SSR
+- Created login and signup pages with clean card layout
+- Set up middleware for session refresh and route protection
+- Integrated user menu with avatar and logout functionality
+- Organized routes with `(authenticated)` route group
+- Applied TrianguloTEC design system (Outfit font, #E63946 red accent)
+- Created home page with stats cards, quick actions, and empty state
 
 ## Files Created/Modified
 
-### Middleware
-- `src/middleware.ts` - Root middleware calling updateSession
-- `src/lib/supabase/middleware.ts` - Supabase session refresh with getAll/setAll cookies
+**Created:**
+- `src/proxy.ts` - Session refresh middleware (Next.js 16 convention)
+- `src/lib/supabase/middleware.ts` - updateSession helper with cookie handling
+- `src/lib/actions/auth.ts` - Server actions for signIn, signUp, signOut
+- `src/app/login/page.tsx` - Login page with form and error handling
+- `src/app/signup/page.tsx` - Signup page with password confirmation
+- `src/app/auth/callback/route.ts` - OAuth callback route
+- `src/app/(authenticated)/layout.tsx` - Protected layout with header/sidebar
+- `src/app/(authenticated)/page.tsx` - Home page with dashboard cards
+- `src/components/layout/header.tsx` - Sticky header with logo and user menu
+- `src/components/layout/sidebar.tsx` - Navigation sidebar
+- `src/components/layout/user-menu.tsx` - Avatar dropdown with profile/logout
+- `src/components/shared/Logo.tsx` - Budget logo component
 
-### Server Actions
-- `src/lib/actions/auth.ts` - signIn, signUp, signOut functions with proper error handling
-
-### Auth Pages
-- `src/app/login/page.tsx` - Login form with email/password, link to signup
-- `src/app/signup/page.tsx` - Signup form with password confirmation
-- `src/app/auth/callback/route.ts` - OAuth callback handler (for future use)
-
-### App Structure
-- `src/app/(authenticated)/layout.tsx` - Layout for protected routes with header/sidebar
-- `src/app/(authenticated)/page.tsx` - Home page showing welcome message
-- `src/app/page.tsx` - Re-exports authenticated page
-
-### Components
-- `src/components/layout/user-menu.tsx` - User avatar dropdown with logout
-- `src/components/layout/header.tsx` - Updated to include UserMenu
-- `src/components/ui/dropdown-menu.tsx` - shadcn/ui dropdown
-- `src/components/ui/avatar.tsx` - shadcn/ui avatar
+**Modified:**
+- `src/app/layout.tsx` - Added Outfit font alongside Inter
+- `src/app/globals.css` - TrianguloTEC theme with hex colors
 
 ## Decisions Made
 
-| Decision | Rationale |
-|----------|-----------|
-| Server actions over API routes | Simpler pattern, Next.js 16 recommended approach |
-| useActionState for forms | React 19 pattern, handles pending/error states |
-| Route groups (authenticated) | Clear separation of protected vs public routes |
-| No OAuth providers for v1 | Keeping simple; callback route ready for future |
-
-## Deviations from Plan
-
-### Auto-fixed Issues
-
-**1. [Rule 2 - Missing Critical] useActionState signature update**
-- **Found during:** Task 2 (Auth UI pages)
-- **Issue:** React 19's useActionState requires prevState as first parameter
-- **Fix:** Updated server action signatures to accept (prevState, formData)
-- **Files modified:** src/lib/actions/auth.ts
-- **Verification:** Build succeeds, forms work correctly
-
----
-
-**Total deviations:** 1 auto-fixed (1 missing critical), 0 deferred
-**Impact on plan:** Essential fix for React 19 compatibility. No scope creep.
+1. **Next.js 16 Proxy Convention**: Renamed middleware.ts to proxy.ts following Next.js 16 deprecation of middleware in favor of proxy
+2. **Hex Colors Over OKLCH**: Used hex color values to match landing page CSS patterns
+3. **Outfit Font**: Applied TrianguloTEC brandbook font instead of default Inter
+4. **Route Groups**: Used `(authenticated)` route group to separate protected and public routes
+5. **Server Actions**: Used React 19 useActionState pattern for auth forms
 
 ## Issues Encountered
 
-- Next.js 16 shows deprecation warning for "middleware" file convention (suggests "proxy")
-- Functionality works correctly; this is a future migration item
+1. **UserMenu not rendering**: Radix UI DropdownMenu requires 'use client' directive - fixed by adding directive
+2. **Layout bypass**: Root page.tsx was re-exporting authenticated page, bypassing route group layout - fixed by removing root page.tsx
+3. **Middleware deprecation**: Next.js 16 warning about deprecated middleware - migrated to proxy.ts convention
 
-## Next Phase Readiness
+## Next Step
 
-- Auth foundation complete: login, signup, logout, protected routes
-- Ready for 01-03-PLAN.md (Database schema)
-- No blockers
-
----
-*Phase: 01-foundation*
-*Completed: 2025-12-17*
+Ready for 01-03-PLAN.md (Database schema)
