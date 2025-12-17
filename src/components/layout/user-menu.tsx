@@ -1,3 +1,5 @@
+'use client'
+
 import { signOut } from '@/lib/actions/auth'
 import {
   DropdownMenu,
