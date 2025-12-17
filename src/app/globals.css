@@ -50,79 +50,142 @@
   --color-sidebar-ring: var(--sidebar-ring);
 }
 
+/* TrianguloTEC Theme - Light (Default) */
 :root {
-  --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
+  --radius: 0.5rem;
+
+  /* TrianguloTEC Brand Colors */
+  --triangulo-red: #E63946;
+  --triangulo-red-dark: #DC2626;
+  --triangulo-dark: #0A0A0A;
+  --triangulo-slate: #2C3E50;
+
+  /* Background */
+  --background: #FFFFFF;
+  --foreground: #0A0A0A;
+
+  /* Card */
+  --card: #FFFFFF;
+  --card-foreground: #0A0A0A;
+
+  /* Popover */
+  --popover: #FFFFFF;
+  --popover-foreground: #0A0A0A;
+
+  /* Primary - TrianguloTEC Red */
+  --primary: #E63946;
+  --primary-foreground: #FFFFFF;
+
+  /* Secondary */
+  --secondary: #F8F8F8;
+  --secondary-foreground: #0A0A0A;
+
+  /* Muted */
+  --muted: #F8F8F8;
+  --muted-foreground: #4A4A4A;
+
+  /* Accent - TrianguloTEC Red */
+  --accent: #FEE2E2;
+  --accent-foreground: #E63946;
+
+  /* Destructive */
+  --destructive: #DC2626;
+
+  /* Border & Input */
+  --border: #E8E8E8;
+  --input: #E8E8E8;
+  --ring: #E63946;
+
+  /* Charts - TrianguloTEC palette */
+  --chart-1: #E63946;
+  --chart-2: #2C3E50;
+  --chart-3: #4A4A4A;
+  --chart-4: #DC2626;
+  --chart-5: #0A0A0A;
+
+  /* Sidebar */
+  --sidebar: #FFFFFF;
+  --sidebar-foreground: #0A0A0A;
+  --sidebar-primary: #E63946;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #FEE2E2;
+  --sidebar-accent-foreground: #E63946;
+  --sidebar-border: #E8E8E8;
+  --sidebar-ring: #E63946;
 }
 
+/* TrianguloTEC Theme - Dark */
 .dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.556 0 0);
+  /* Background */
+  --background: #0A0A0A;
+  --foreground: #FFFFFF;
+
+  /* Card */
+  --card: #1A1A1A;
+  --card-foreground: #FFFFFF;
+
+  /* Popover */
+  --popover: #1A1A1A;
+  --popover-foreground: #FFFFFF;
+
+  /* Primary - TrianguloTEC Red */
+  --primary: #E63946;
+  --primary-foreground: #FFFFFF;
+
+  /* Secondary */
+  --secondary: #1A1A1A;
+  --secondary-foreground: #FFFFFF;
+
+  /* Muted */
+  --muted: #1A1A1A;
+  --muted-foreground: #B0B0B0;
+
+  /* Accent */
+  --accent: #2A1A1A;
+  --accent-foreground: #E63946;
+
+  /* Destructive */
+  --destructive: #DC2626;
+
+  /* Border & Input */
+  --border: #2A2A2A;
+  --input: #2A2A2A;
+  --ring: #E63946;
+
+  /* Charts */
+  --chart-1: #E63946;
+  --chart-2: #5A7A9A;
+  --chart-3: #B0B0B0;
+  --chart-4: #F87171;
+  --chart-5: #FFFFFF;
+
+  /* Sidebar */
+  --sidebar: #1A1A1A;
+  --sidebar-foreground: #FFFFFF;
+  --sidebar-primary: #E63946;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #2A1A1A;
+  --sidebar-accent-foreground: #E63946;
+  --sidebar-border: #2A2A2A;
+  --sidebar-ring: #E63946;
 }
 
 @layer base {
   * {
     @apply border-border outline-ring/50;
+    /* Smooth transitions for theme changes */
+    transition-property: background-color, border-color, color;
+    transition-duration: 200ms;
+    transition-timing-function: ease;
   }
+
+  /* Respect user's motion preferences */
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      transition-duration: 0ms !important;
+    }
+  }
+
   body {
     @apply bg-background text-foreground;
     font-family: var(--font-outfit), var(--font-inter), -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -131,4 +194,14 @@
 
 html {
   scroll-behavior: smooth;
+}
+
+/* Interactive hover effects */
+.interactive-card {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.interactive-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px -8px rgba(230, 57, 70, 0.15);
 }
